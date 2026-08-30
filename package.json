@@ -1,0 +1,42 @@
+{
+  "name": "miniblog-api",
+  "version": "1.0.0",
+  "description": "API REST de MiniBlog: gestion de authors, posts y comments con Express y PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:setup": "node scripts/run-sql.js schema.sql",
+    "db:seed": "node scripts/run-sql.js seed.sql",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage --runInBand"
+  },
+  "keywords": [
+    "express",
+    "postgresql",
+    "rest",
+    "api"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "pg": "^8.12.0",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
+}
