@@ -2,6 +2,12 @@
 
 API REST desarrollada en Node.js + Express y conectada a PostgreSQL para el servicio de contenidos **MiniBlog** de DevSpark. Permite gestionar autores (`authors`), publicaciones (`posts`) y comentarios (`comments`) con validaciones, manejo centralizado de errores, tests automatizados y documentación OpenAPI.
 
+## Demo en producción
+
+- **API:** https://miniblog-api-production-9b50.up.railway.app
+- **Documentación interactiva (Swagger UI):** https://miniblog-api-production-9b50.up.railway.app/docs
+- **Estado del servicio:** https://miniblog-api-production-9b50.up.railway.app/health
+
 ## Stack
 
 - Node.js 18+ y Express 4
@@ -168,7 +174,7 @@ La especificación está en [`docs/openapi.yaml`](docs/openapi.yaml) y se sirve 
 - Swagger UI: `http://localhost:3000/docs`
 - Especificación en JSON: `http://localhost:3000/api-docs.json`
 
-En producción: `https://<tu-app>.up.railway.app/docs`
+En producción: `https://miniblog-api-production-9b50.up.railway.app/docs`
 
 ## Deployment en Railway
 
@@ -197,13 +203,13 @@ DATABASE_URL="postgresql://postgres:<password>@<host>.proxy.rlwy.net:<puerto>/ra
 8. Verificar el deploy:
 
 ```bash
-curl https://<tu-app>.up.railway.app/health
+curl https://miniblog-api-production-9b50.up.railway.app/health
 ```
 
 ### URLs
 
 - **Internal URL** (comunicación entre servicios dentro de Railway): `postgres.railway.internal:5432`, usada a través de `${{Postgres.DATABASE_URL}}`.
-- **Public URL** de la API: `https://<tu-app>.up.railway.app`
+- **Public URL** de la API: `https://miniblog-api-production-9b50.up.railway.app`
 - **Public URL** de la base (solo para los scripts SQL desde la máquina local): `<host>.proxy.rlwy.net:<puerto>`
 
 ## Registro del uso de IA

@@ -6,7 +6,7 @@ info:
 servers:
   - url: http://localhost:3000
     description: Entorno local
-  - url: https://miniblog-api.up.railway.app
+  - url: https://miniblog-api-production-9b50.up.railway.app
     description: Entorno productivo en Railway
 tags:
   - name: Authors
