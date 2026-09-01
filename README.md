@@ -125,6 +125,23 @@ Los errores de validación devuelven 400 con el detalle de cada campo:
 }
 ```
 
+### Manejo de errores
+
+El middleware global [`errorHandler`](src/middlewares/errorHandler.js) es el único punto donde se arma la respuesta de error, y distingue tres orígenes:
+
+1. **Errores de negocio**: los servicios lanzan un `AppError` con su status code (404 si el recurso no existe, 409 si el email está repetido).
+2. **Errores de PostgreSQL**: se traducen según el código SQLSTATE en lugar de responder un 500 genérico.
+
+| Código | Significado | Respuesta |
+| --- | --- | --- |
+| `23505` | Violación de unicidad | 409 |
+| `23503` | Violación de clave foránea | 400 |
+| `23502` | Campo obligatorio nulo | 400 |
+| `22001` | Valor más largo que la columna | 400 |
+| `22P02` | Formato de dato inválido | 400 |
+
+3. **Errores inesperados**: se registran en el log del servidor y devuelven un 500 con un mensaje genérico, sin filtrar detalles internos al cliente.
+
 ### Ejemplos
 
 ```bash

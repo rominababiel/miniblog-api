@@ -4,10 +4,12 @@ info:
   description: API REST para gestionar authors, posts y comments del servicio MiniBlog de DevSpark.
   version: 1.0.0
 servers:
-  - url: http://localhost:3000
-    description: Entorno local
+  - url: /
+    description: Servidor actual, resuelto segun el host desde el que se abre la documentacion
   - url: https://miniblog-api-production-9b50.up.railway.app
     description: Entorno productivo en Railway
+  - url: http://localhost:3000
+    description: Entorno local
 tags:
   - name: Authors
   - name: Posts
