@@ -12,7 +12,7 @@ const postBody = [
   body('title').trim().notEmpty().withMessage('El titulo es obligatorio')
     .isLength({ max: 200 }).withMessage('El titulo no puede superar los 200 caracteres'),
   body('content').trim().notEmpty().withMessage('El contenido es obligatorio'),
-  body('author_id').notEmpty().withMessage('El author_id es obligatorio')
+  body('author_id').notEmpty().withMessage('El author_id es obligatorio').bail()
     .isInt({ min: 1 }).withMessage('El author_id debe ser un numero entero positivo'),
   body('published').optional().isBoolean().withMessage('published debe ser true o false'),
 ];

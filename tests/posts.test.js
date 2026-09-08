@@ -143,6 +143,14 @@ describe('POST /posts', () => {
     expect(query).not.toHaveBeenCalled();
   });
 
+  it('informa un unico error por cada campo obligatorio faltante', async () => {
+    const response = await request(app).post('/posts').send({});
+
+    expect(response.status).toBe(400);
+    expect(response.body.details).toHaveLength(3);
+    expect(response.body.details.map((item) => item.field)).toEqual(['title', 'content', 'author_id']);
+  });
+
   it('devuelve 404 cuando el author del post no existe', async () => {
     query.mockResolvedValueOnce({ rows: [], rowCount: 0 });
 

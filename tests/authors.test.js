@@ -110,6 +110,14 @@ describe('POST /authors', () => {
     expect(response.body.details).toContainEqual({ field: 'email', message: 'El email no tiene un formato valido' });
   });
 
+  it('informa un unico error por cada campo obligatorio faltante', async () => {
+    const response = await request(app).post('/authors').send({});
+
+    expect(response.status).toBe(400);
+    expect(response.body.details).toHaveLength(2);
+    expect(response.body.details.map((item) => item.field)).toEqual(['name', 'email']);
+  });
+
   it('devuelve 409 cuando el email ya esta registrado', async () => {
     query.mockResolvedValueOnce({ rows: [{ id: 1 }], rowCount: 1 });
 
