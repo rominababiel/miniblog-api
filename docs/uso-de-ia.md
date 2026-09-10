@@ -28,7 +28,7 @@ Se pidió cubrir las validaciones exigidas por la consigna (nombre no vacío, em
 
 > "Cada función quiero que la testees para cumplir 100% con los requerimientos."
 
-**Impacto:** se escribieron 47 tests con Jest y Supertest que cubren los flujos exitosos y los casos de error de cada endpoint. El módulo de conexión se mockea para que la suite no dependa de una base de datos activa. La cobertura final es del 100% en statements, branches, functions y lines.
+**Impacto:** se escribieron 54 tests con Jest y Supertest que cubren los flujos exitosos y los casos de error de cada endpoint. El módulo de conexión se mockea para que la suite no dependa de una base de datos activa. La cobertura final es del 100% en statements, branches, functions y lines.
 
 ### 5. Documentación
 

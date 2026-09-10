@@ -15,7 +15,7 @@ CREATE TABLE posts (
   title VARCHAR(200) NOT NULL,
   content TEXT NOT NULL,
   author_id INTEGER NOT NULL,
-  published BOOLEAN DEFAULT FALSE,
+  published BOOLEAN NOT NULL DEFAULT FALSE,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE CASCADE
 );

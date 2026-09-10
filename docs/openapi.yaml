@@ -467,7 +467,10 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
     ConflictError:
-      description: El email ya esta registrado
+      description: >-
+        Conflicto: el email ya esta registrado. Se responde 409 Conflict (RFC 9110)
+        por ser el codigo semanticamente correcto ante una violacion de unicidad,
+        en lugar de un 400 generico de validacion.
       content:
         application/json:
           schema:
