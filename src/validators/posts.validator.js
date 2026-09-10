@@ -9,7 +9,7 @@ const authorIdParam = [
 ];
 
 const postBody = [
-  body('title').trim().notEmpty().withMessage('El titulo es obligatorio')
+  body('title').trim().notEmpty().withMessage('El titulo es obligatorio').bail()
     .isLength({ max: 200 }).withMessage('El titulo no puede superar los 200 caracteres'),
   body('content').trim().notEmpty().withMessage('El contenido es obligatorio'),
   body('author_id').notEmpty().withMessage('El author_id es obligatorio').bail()

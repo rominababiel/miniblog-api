@@ -178,7 +178,7 @@ authors (1) ──< (N) posts (1) ──< (N) comments
 Los tests usan Jest y Supertest sobre la app de Express, con el módulo de base de datos mockeado, por lo que no requieren una instancia de PostgreSQL levantada.
 
 ```bash
-npm test              # ejecuta los 47 tests
+npm test              # ejecuta los 54 tests
 npm run test:coverage # ejecuta los tests con reporte de cobertura
 ```
 
