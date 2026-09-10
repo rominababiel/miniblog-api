@@ -6,6 +6,9 @@ API REST desarrollada en Node.js + Express y conectada a PostgreSQL para el serv
 
 - **API:** https://miniblog-api-production-9b50.up.railway.app
 - **Documentación interactiva (Swagger UI):** https://miniblog-api-production-9b50.up.railway.app/docs
+- 
+  <img width="1917" height="972" alt="image" src="https://github.com/user-attachments/assets/f7be5310-be21-4c80-840f-987b16a43259" />
+
 - **Estado del servicio:** https://miniblog-api-production-9b50.up.railway.app/health
 
 ## Stack
