@@ -142,6 +142,8 @@ El middleware global [`errorHandler`](src/middlewares/errorHandler.js) es el ún
 
 3. **Errores inesperados**: se registran en el log del servidor y devuelven un 500 con un mensaje genérico, sin filtrar detalles internos al cliente.
 
+> **Sobre el uso de 409:** la consigna enumera 200/201/204/400/404/500 como códigos esperados. Para el conflicto de unicidad de `email` se responde **409 Conflict** por ser el código semánticamente correcto según la [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110#status.409): el request es válido y está bien formado, pero choca con el estado actual del recurso. Un 400 indicaría un error de formato en el request, que no es el caso. La decisión es deliberada y está documentada en el `openapi.yaml`.
+
 ### Ejemplos
 
 ```bash
