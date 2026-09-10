@@ -49,7 +49,7 @@ API REST desarrollada en Node.js + Express y conectada a PostgreSQL para el serv
 1. Clonar el repositorio e instalar dependencias:
 
 ```bash
-git clone https://github.com/<usuario>/miniblog-api.git
+git clone https://github.com/rominababiel/miniblog-api.git
 cd miniblog-api
 npm install
 ```
@@ -64,7 +64,6 @@ Contenido de `.env.example`:
 
 ```env
 PORT=3000
-NODE_ENV=development
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/miniblog
 DB_SSL=false
 ```
@@ -206,7 +205,6 @@ En producción: `https://miniblog-api-production-9b50.up.railway.app/docs`
 | --- | --- |
 | `DATABASE_URL` | `${{Postgres.DATABASE_URL}}` (referencia interna al servicio de base de datos) |
 | `DB_SSL` | `false` si se usa la URL interna, `true` si se conecta por la URL pública |
-| `NODE_ENV` | `production` |
 
 `PORT` lo inyecta Railway automáticamente; el servidor lo lee con `process.env.PORT`.
 
